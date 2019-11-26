@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1574804034 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\main.cpp
+	<iostream>
+	"Train.h"
+	"Product.h"
+
+1574541794 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\vehicle.cpp
+	"Vehicle.h"
+
+1574541794 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\vehicle.h
+	<string>
+
+1574796262 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\wagon.cpp
+	"Wagon.h"
+
+1574796262 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\wagon.h
+	"Vehicle.h"
+
+1574543594 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\train.cpp
+	<fstream>
+	<iostream>
+	<algorithm>
+	<iterator>
+	"Train.h"
+
+1574804276 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\train.h
+	"Wagon.h"
+	<vector>
+
+1574803977 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\product.cpp
+	"Product.h"
+	<algorithm>
+	<iterator>
+	<iostream>
+
+1574793704 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\product.h
+	<Train.h>
+	<string>
+	<map>
+
