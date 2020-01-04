@@ -11,14 +11,20 @@ int main()
 #else
     cout << "Release mode!" << endl;
 #endif
+    vector<Train> trains;
     Train t1("vonat1schedule.txt");
     Train t2("vonat2schedule.txt");
-    vector<Train> trains;
     trains.push_back(t1);
     trains.push_back(t2);
-    Product eper("eper","A","E",35);
-    if(eper.canReachDestination(trains))
-        cout<<"hurrá"<<endl;
+
+    vector<Product> products;
+    Product eper("eper","A","C",35);
+    Product szilva("szilva","B","D",10);
+    Product rebarbara("eper","A","D",25);
+    products.push_back(eper);
+    products.push_back(szilva);
+    products.push_back(rebarbara);
+
 
     Wagon w1("egyes vagon","A",10);
     Wagon w2("kettes vagon","B",15);
