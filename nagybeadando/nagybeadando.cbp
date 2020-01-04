@@ -35,11 +35,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ActionPlan.h" />
 		<Unit filename="include/Product.h" />
 		<Unit filename="include/Train.h" />
 		<Unit filename="include/Vehicle.h" />
 		<Unit filename="include/Wagon.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/ActionPlan.cpp" />
 		<Unit filename="src/Product.cpp" />
 		<Unit filename="src/Train.cpp" />
 		<Unit filename="src/Vehicle.cpp" />

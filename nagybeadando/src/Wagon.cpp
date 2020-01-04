@@ -8,7 +8,7 @@ Wagon::Wagon(std::string name, std::string place, int size) : Vehicle(name,place
     _product="";
 }
 
-void Wagon::pakol(std::string product, int& quantity)
+void Wagon::pakol(std::string product, std::map<std::string,int>& tracking)
 {
     _product=product;
     if(quantity>_size)
