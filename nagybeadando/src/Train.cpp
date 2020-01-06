@@ -26,7 +26,7 @@ Train::Train(std::string filename)
 
 bool Train::csatol(Wagon* w)
 {
-    if(_wagons.size()<(size_t)_maxWagons)
+    if(_wagons.size()<_maxWagons)
     {
         _wagons.push_back(w);
         return true;

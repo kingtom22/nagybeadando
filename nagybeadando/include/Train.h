@@ -14,7 +14,7 @@ class Train : public Vehicle
 
         std::vector<Wagon*> _wagons;
         std::vector<std::pair<int,std::string>> _schedule;
-        int _maxWagons;
+        unsigned _maxWagons;
 
     protected:
 

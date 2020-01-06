@@ -1,16 +1,17 @@
-#include "Product.h"
+#include "Order.h"
 #include <algorithm>
 #include <iterator>
 #include <iostream>
 
 using namespace std;
 
-Product::Product(std::string name,std::string source, std::string destination, int quantity) : _name(name), _source(source), _destination(destination)
+Order::Order(std::string name,std::string source, std::string destination, int quantity) :
+    _name(name), _source(source), _destination(destination), _quantity(quantity)
 {
     //ctor
     _tracking[source]=quantity;
 }
-bool Product::canReachDestination(vector<Train>& trains)
+bool Order::canReachDestination(vector<Train>& trains)
 {
     vector<Train> sc_trains;
     vector<Train> de_trains;
@@ -44,6 +45,17 @@ bool Product::canReachDestination(vector<Train>& trains)
             if(find(stations.begin(),stations.end(),item.second)!=stations.end())
                 return true;
         }
+    }
+    return false;
+}
+
+bool Order::hasArrived()
+{
+    auto it=_tracking.find(_destination);
+    if(it!=_tracking.end())
+    {
+        if(it->second==_quantity)
+            return true;
     }
     return false;
 }

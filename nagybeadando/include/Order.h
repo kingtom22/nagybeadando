@@ -1,19 +1,19 @@
-#ifndef PRODUCT_H
-#define PRODUCT_H
+#ifndef ORDER_H
+#define ORDER_H
 
 #include <Train.h>
-#include <string>
-#include <map>
 
-class Product
+class Order
 {
     public:
-        Product(std::string name,std::string source, std::string destination, int quantity);
+        Order(std::string name,std::string source, std::string destination, int quantity);
         bool canReachDestination(std::vector<Train>& trains);
+        bool hasArrived();
 
         std::string _name;
         std::string _source;
         std::string _destination;
+        int _quantity;
 
         std::map<std::string,int> _tracking; //hol és mennyi van a termékbõl az egyes állomásokon lepakolt állapotban
 
@@ -22,4 +22,4 @@ class Product
     private:
 };
 
-#endif // PRODUCT_H
+#endif // ORDER_H

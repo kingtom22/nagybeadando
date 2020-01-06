@@ -1,6 +1,5 @@
 #include <iostream>
-#include "Train.h"
-#include "Product.h"
+#include "ActionPlan.h"
 
 using namespace std;
 
@@ -17,25 +16,23 @@ int main()
     trains.push_back(t1);
     trains.push_back(t2);
 
-    vector<Product> products;
-    Product eper("eper","A","C",35);
-    Product szilva("szilva","B","D",10);
-    Product rebarbara("eper","A","D",25);
-    products.push_back(eper);
-    products.push_back(szilva);
-    products.push_back(rebarbara);
+    vector<Order> orders;
+    Order eper("eper","A","C",35);
+    Order retek("retek","B","D",10);
+    Order rebarbara("rebarbara","A","D",100);
+    orders.push_back(eper);
+    orders.push_back(retek);
+    orders.push_back(rebarbara);
 
-
+    vector<Wagon> wagons;
     Wagon w1("egyes vagon","A",10);
     Wagon w2("kettes vagon","B",15);
-    t1.csatol(&w1);
+    wagons.push_back(w1);
+    wagons.push_back(w2);
 
-    t1.lecsatol(&w1);
-
-    w1.pakol(eper._name,eper._tracking[eper._source]);
-
-    eper._tracking[eper._destination]=w1._load;
-    w1.lepakol();
+    ActionPlan myActionPlan(trains,orders,wagons);
+    myActionPlan.canProductsBeDelivered();
+    myActionPlan.CreatePlan();
 
     return 0;
 }
