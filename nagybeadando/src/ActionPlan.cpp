@@ -65,26 +65,25 @@ void ActionPlan::CreatePlan()
             for(Wagon& w:station_wagons)
             {
                 /// felpakolás
-                if(w._load<w._size)
+                // ha nem érkezett meg az áru és megy arra vonat ami a célállomása felé megy akkor pakolja fel
+                for(auto& p:products)
                 {
-                    // ha nem érkezett meg az áru és megy arra vonat ami a célállomása felé megy akkor pakolja fel
-
-                    for(auto& p:products)
+                    string name=p.first;
+                    auto it=find_if(_orders.begin(),_orders.end(),
+                                    [name](const Order& o)
                     {
-                        string name=p.first;
-                        auto it=find_if(_orders.begin(),_orders.end(),
-                                [name](const Order& o){return o._name==name;});
-                        if(it!=_orders.end() && !it->hasArrived())
-                        {
-                            //bármi van felpakolom mert nem tudom leírni a felpakolás szempontjait
-                            w.pakol(it->_name,it->_tracking);
-                            cout << _time << " pakol " << place << " " << w._name << " " << name << endl;
-                        }
+                        return o._name==name;
+                    });
+                    if(it!=_orders.end() && !it->hasArrived() && w._load==0)
+                    {
+                        //bármi van felpakolom mert nem tudom leírni a felpakolás szempontjait
+                        w.pakol(it->_name,it->_tracking);
+                        cout << _time << " pakol " << place << " " << w._name << " " << name << endl;
                     }
                 }
                 /// lepakolás
             }
-
+            station.second=products;
         }
 
         // do possible csatlakoztatás
@@ -93,6 +92,7 @@ void ActionPlan::CreatePlan()
 #ifdef DEBUG
         writeStateToConsole();
 #endif // DEBUG
+
         _time++;
         return;
     }

@@ -19,9 +19,11 @@ int main()
     vector<Order> orders;
     Order eper("eper","A","C",35);
     Order retek("retek","B","D",10);
+    Order retek1("retek","C","D",50);
     Order rebarbara("rebarbara","A","D",100);
     orders.push_back(eper);
     orders.push_back(retek);
+    orders.push_back(retek1);
     orders.push_back(rebarbara);
 
     vector<Wagon> wagons;

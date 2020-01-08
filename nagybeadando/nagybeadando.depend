@@ -1,29 +1,29 @@
 # depslib dependency file v1.0
-1575411915 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\main.cpp
+1578481799 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\main.cpp
 	<iostream>
 	"ActionPlan.h"
 
-1574541794 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\vehicle.cpp
+1578166219 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\vehicle.cpp
 	"Vehicle.h"
 
-1574541794 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\vehicle.h
+1578166218 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\vehicle.h
 	<string>
 
-1574796262 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\wagon.cpp
+1578167630 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\wagon.cpp
 	"Wagon.h"
 
-1577900893 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\wagon.h
+1578167261 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\wagon.h
 	"Vehicle.h"
 	<map>
 
-1574543594 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\train.cpp
+1578169277 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\train.cpp
 	<fstream>
 	<iostream>
 	<algorithm>
 	<iterator>
 	"Train.h"
 
-1574804276 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\train.h
+1578169277 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\train.h
 	"Wagon.h"
 	<vector>
 
@@ -36,12 +36,13 @@
 1577900893 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\product.h
 	<Train.h>
 
-1577893394 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\actionplan.cpp
+1578478431 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\actionplan.cpp
 	<iostream>
+	<algorithm>
 	"ActionPlan.h"
 
-1575411915 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\actionplan.h
-	"Product.h"
+1578340951 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\actionplan.h
+	"Order.h"
 
 1578248134 source:c:\users\kingtom22\documents\prog2\nagybeadando-master\nagybeadando\main.cpp
 	<iostream>
@@ -92,6 +93,15 @@
 	<Train.h>
 
 1578247959 source:c:\users\kingtom22\documents\prog2\nagybeadando-master\nagybeadando\src\order.cpp
+	"Order.h"
+	<algorithm>
+	<iterator>
+	<iostream>
+
+1578247960 c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\include\order.h
+	<Train.h>
+
+1578340951 source:c:\users\kingtom22\documents\github\nagybeadando\nagybeadando\src\order.cpp
 	"Order.h"
 	<algorithm>
 	<iterator>
