@@ -9,7 +9,6 @@ Order::Order(std::string name,std::string source, std::string destination, int q
     _name(name), _source(source), _destination(destination), _quantity(quantity)
 {
     //ctor
-    _tracking[source]=quantity;
 }
 bool Order::canReachDestination(vector<Train>& trains)
 {
@@ -49,13 +48,16 @@ bool Order::canReachDestination(vector<Train>& trains)
     return false;
 }
 
-bool Order::hasArrived()
+bool Order::hasArrived(map<string,map<string,int>>& stations)
 {
-    auto it=_tracking.find(_destination);
-    if(it!=_tracking.end())
+    for(auto& station: stations)
     {
-        if(it->second==_quantity)
-            return true;
+        auto it=station.second.find(_name);
+        if(it!=station.second.end())
+        {
+            if(station.first==_destination && it->second)
+                return true;
+        }
     }
     return false;
 }

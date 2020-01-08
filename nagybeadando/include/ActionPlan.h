@@ -10,9 +10,7 @@ class ActionPlan
         bool areProductsDelivered();
         void canProductsBeDelivered();
         void CreatePlan();
-
         void writeStateToConsole();
-
 
         std::vector<Train> _trains;
         std::vector<Order> _orders;

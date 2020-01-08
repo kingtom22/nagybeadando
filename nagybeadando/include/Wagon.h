@@ -8,8 +8,8 @@ class Wagon : public Vehicle
 {
     public:
         Wagon(std::string name, std::string place, int size);
-        void pakol(std::string product, std::map<std::string,int>& tracking);//módosítja a mennyiséget is
-        void lepakol();
+        void pakol(std::string product, std::map<std::string,int>& products);//módosítja a mennyiséget is
+        void lepakol(std::map<std::string,int>& products,int mennyit);
 
         int _size;
         int _load;

@@ -8,14 +8,12 @@ class Order
     public:
         Order(std::string name,std::string source, std::string destination, int quantity);
         bool canReachDestination(std::vector<Train>& trains);
-        bool hasArrived();
+        bool hasArrived(std::map<std::string,std::map<std::string,int>>& _stations);
 
         std::string _name;
         std::string _source;
         std::string _destination;
         int _quantity;
-
-        std::map<std::string,int> _tracking; //hol és mennyi van a termékbõl az egyes állomásokon lepakolt állapotban
 
     protected:
 

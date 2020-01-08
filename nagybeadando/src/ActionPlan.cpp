@@ -26,16 +26,6 @@ ActionPlan::ActionPlan(std::vector<Train>& trains, std::vector<Order>& orders, s
     }
 }
 
-bool ActionPlan::areProductsDelivered()
-{
-    for(Order& o:_orders)
-    {
-        if(!o.hasArrived())
-            return false;
-    }
-    return true;
-}
-
 void ActionPlan::canProductsBeDelivered()
 {
     for(vector<Order>::iterator it=_orders.begin();it!=_orders.end();it++)
@@ -51,7 +41,7 @@ void ActionPlan::canProductsBeDelivered()
 
 void ActionPlan::CreatePlan()
 {
-    while(!areProductsDelivered())
+    while(_orders.size()>0)
     {
         /// To Do ///
         // do possible pakolás
@@ -74,10 +64,10 @@ void ActionPlan::CreatePlan()
                     {
                         return o._name==name;
                     });
-                    if(it!=_orders.end() && !it->hasArrived() && w._load==0)
+                    if(it!=_orders.end() && !it->hasArrived(_stations) && w._load<w._size)
                     {
                         //bármi van felpakolom mert nem tudom leírni a felpakolás szempontjait
-                        w.pakol(it->_name,it->_tracking);
+                        w.pakol(name,products);
                         cout << _time << " pakol " << place << " " << w._name << " " << name << endl;
                     }
                 }
